@@ -29,22 +29,45 @@
         <div>
             <!-- navbar place here  -->
             <div
-                class="lg:flex lg:justify-between items-center  lg:px-10 md:grid md:grid-cols-2 lg:p-5  bg-[#333D51] text-white">
-
-                <div>
+                class="lg:flex lg:justify-between items-center lg:px-10 md:grid md:grid-cols-2 lg:p-5 bg-[#333D51] text-white">
+                <!-- Logo -->
+                <div class="flex justify-between items-center p-4 lg:p-0">
                     <h1 class="text-3xl">Govinda Parajuli</h1>
-                </div>
-                <div>
-                    <a href="" class="lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">About Us</a>
-                    <a href="" class="lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Projects</a>
-                    <a href="" class="lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Contact</a>
-                    <a href="" class="lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Projects</a>
-                    <a href="" class="lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Educations</a>
+                    <!-- Hamburger Icon for Mobile -->
+                    <button id="menu-toggle" class="lg:hidden focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
                 </div>
 
+                <!-- Navigation Links -->
+                <div id="menu" class="hidden lg:flex lg:items-center">
+                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">About Us</a>
+                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Projects</a>
+                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Contact</a>
+                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Educations</a>
+                </div>
             </div>
             <!-- navbar place here -->
         </div>
+
+        <script>
+            // Toggle mobile menu
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                var menu = document.getElementById('menu');
+                menu.classList.toggle('hidden');
+            });
+        </script>
+
+        <style>
+            /* Optional: Add some smooth transitions */
+            #menu {
+                transition: all 0.3s ease-in-out;
+            }
+        </style>
         <!-- start of landing section -->
 
         <div class="lg:flex lg:justify-between items-center md:grid md:grid-cols-2 grid-cols-1  lg:p-10 p-5 ">
@@ -62,17 +85,17 @@
                 </div>
                 <div class="text-center flex justify-between px-6 text-white">
                     <a href="https://www.facebook.com/PARAJULIGOVINDA541/"><i
-                        class="wow animate__animated animate__backInUp ri-facebook-circle-fill border-2 rounded-full text-4xl  text-center "></i></a>
-                     <a href="https://www.instagram.com/parajuligovinda057/"><i
-                        class="wow animate__animated animate__backInUp ri-instagram-fill border-2 rounded-full text-4xl"></i></a>
+                            class="wow animate__animated animate__backInUp ri-facebook-circle-fill border-2 rounded-full text-4xl  text-center "></i></a>
+                    <a href="https://www.instagram.com/parajuligovinda057/"><i
+                            class="wow animate__animated animate__backInUp ri-instagram-fill border-2 rounded-full text-4xl"></i></a>
                     <a href="https://github.com/ParajuliGovinda541"><i
-                        class=" wow animate__animated animate__backInUp ri-github-fill border-2 rounded-full text-4xl"></i></a>
+                            class=" wow animate__animated animate__backInUp ri-github-fill border-2 rounded-full text-4xl"></i></a>
                     <a href="https://x.com/govinda541"><i
-                        class=" wow animate__animated animate__backInUp ri-twitter-fill border-2 rounded-full text-4xl"></i></a>
+                            class=" wow animate__animated animate__backInUp ri-twitter-fill border-2 rounded-full text-4xl"></i></a>
                     <a href="+977 9865255027"><i
-                        class=" wow animate__animated animate__backInUp ri-whatsapp-fill border-2 rounded-full text-4xl"></i></a>
+                            class=" wow animate__animated animate__backInUp ri-whatsapp-fill border-2 rounded-full text-4xl"></i></a>
                     <a href=""><i
-                        class="wow animate__animated animate__backInUp ri-mail-fill border-2 rounded-full text-4xl"></i></a>
+                            class="wow animate__animated animate__backInUp ri-mail-fill border-2 rounded-full text-4xl"></i></a>
                 </div>
             </div>
             <div class="wow animate__animated animate__backInRight px-12">
@@ -144,70 +167,69 @@
 
         </div>
 
-        <div
-        class="w-full lg:flex md:grid md:grid-cols-2 gap-10 grid-cols-1 lg:justify-center mx-auto my-10 lg:px-10">
-    
-        <!-- First Project -->
-        <div class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-            <iframe class="rounded-t-md" 
-                src="https://sharkfundamentals.com/" 
-                width="100%" 
-                height="50%" 
-                style="border: none; overflow: hidden;">
-            </iframe>
-            <div class="px-6 py-4">
-                <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Shark Fundamentals</p>
-                <p class="text-gray-600 text-justify text-base">
-                    This project showcases an educational website focused on stock market fundamentals and trading insights. 
-                    Developed using responsive design principles to ensure a seamless user experience across devices.
-                </p>
+        <div class="w-full lg:flex md:grid md:grid-cols-2 gap-10 grid-cols-1 lg:justify-center mx-auto my-10 lg:px-10">
+
+            <!-- First Project -->
+            <div
+                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
+                <iframe class="rounded-t-md" src="https://sharkfundamentals.com/" width="100%" height="50%"
+                    style="border: none; overflow: hidden;">
+                </iframe>
+                <div class="px-6 py-4">
+                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Shark Fundamentals</p>
+                    <p class="text-gray-600 text-justify text-base">
+                        This project showcases an educational website focused on stock market fundamentals and trading
+                        insights.
+                        Developed using responsive design principles to ensure a seamless user experience across
+                        devices.
+                    </p>
+                </div>
+                <a href="https://gaurabhotel.govindaparajuli.com.np/"
+                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
+                    target="_blank">Visit Site</a>
             </div>
-            <a href="https://sharkfundamentals.com/"
-                class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                target="_blank">Visit Site</a>
-        </div>
-        
-        <div class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-            <iframe class="rounded-t-md" 
-                src="https://sharkfundamentals.com/" 
-                width="100%" 
-                height="50%" 
-                style="border: none; overflow: hidden;">
-            </iframe>
-            <div class="px-6 py-4">
-                <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Shark Fundamentals</p>
-                <p class="text-gray-600 text-justify text-base">
-                    This project showcases an educational website focused on stock market fundamentals and trading insights. 
-                    Developed using responsive design principles to ensure a seamless user experience across devices.
-                </p>
+
+            <div
+                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
+                <iframe class="rounded-t-md" src="https://gaurabhotel.govindaparajuli.com.np/" width="100%" height="50%"
+                    style="border: none; overflow: hidden;">
+                </iframe>
+                <div class="px-6 py-4">
+                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Gaurab Hotel And Lodge</p>
+                    <p class="text-gray-600 text-justify text-base">
+                        This project showcases an educational website focused on stock market fundamentals and trading
+                        insights.
+                        Developed using responsive design principles to ensure a seamless user experience across
+                        devices.
+                    </p>
+                </div>
+                <a href="https://skyfallengineering.govindaparajuli.com.np/"
+                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
+                    target="_blank">Visit Site</a>
             </div>
-            <a href="https://sharkfundamentals.com/"
-                class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                target="_blank">Visit Site</a>
-        </div>
-        
-        <div class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-            <iframe class="rounded-t-md" 
-                src="https://sharkfundamentals.com/" 
-                width="100%" 
-                height="50%" 
-                style="border: none; overflow: hidden;">
-            </iframe>
-            <div class="px-6 py-4">
-                <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Shark Fundamentals</p>
-                <p class="text-gray-600 text-justify text-base">
-                    This project showcases an educational website focused on stock market fundamentals and trading insights. 
-                    Developed using responsive design principles to ensure a seamless user experience across devices.
-                </p>
+
+            <div
+                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
+                <iframe class="rounded-t-md" src="https://skyfallengineering.govindaparajuli.com.np/" width="100%" height="50%"
+                    style="border: none; overflow: hidden;">
+                </iframe>
+                <div class="px-6 py-4">
+                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">SkyFall Engineering</p>
+                    <p class="text-gray-600 text-justify text-base">
+                        This project showcases an educational website focused on stock market fundamentals and trading
+                        insights.
+                        Developed using responsive design principles to ensure a seamless user experience across
+                        devices.
+                    </p>
+                </div>
+                <a href="https://sharkfundamentals.com/"
+                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
+                    target="_blank">Visit Site</a>
             </div>
-            <a href="https://sharkfundamentals.com/"
-                class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                target="_blank">Visit Site</a>
+
+
         </div>
-        
-        
-    </div>
-    
+
 
     </section>
 
@@ -242,10 +264,10 @@
                 </div>
                 <div class="my-10">
                     Desgin and developed by Govindaa
-                 
-                             </div>
+
+                </div>
             </div>
- 
+
         </div>
     </section>
     <!-- End of Footer -->
