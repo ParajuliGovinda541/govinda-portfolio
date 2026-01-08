@@ -1,0 +1,97 @@
+<section id="projects" class="py-24 bg-primary relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-accent uppercase tracking-widest text-sm font-bold">Portfolio</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 font-sans">Recent Projects</h2>
+            <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project Card 1 -->
+            <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                data-aos="fade-up">
+                <!-- Image Representation instead of Iframe -->
+                <div class="relative h-48 bg-slate-700 overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-500">
+                        <i class="ri-bar-chart-box-line text-5xl"></i> <!-- Placeholder Icon -->
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://sharkfundamentals.com/" target="_blank"
+                            class="px-6 py-2 bg-accent text-primary font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Live</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Shark Fundamentals</h3>
+                    <p class="text-textGray text-sm mb-4 line-clamp-3">
+                        An educational platform focused on stock market fundamentals and trading insights with
+                        responsive data visualization.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Web</span>
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Finance</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                data-aos="fade-up" data-aos-delay="100">
+                <div class="relative h-48 bg-slate-700 overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-500">
+                        <i class="ri-hotel-bed-line text-5xl"></i>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://gaurabhotel.govindaparajuli.com.np/" target="_blank"
+                            class="px-6 py-2 bg-accent text-primary font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Live</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">Gaurab Hotel</h3>
+                    <p class="text-textGray text-sm mb-4 line-clamp-3">
+                        A complete booking and showcase website for hospitality, featuring room galleries and
+                        contact integration.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Design</span>
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Hospitality</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="relative h-48 bg-slate-700 overflow-hidden">
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-500">
+                        <i class="ri-building-2-line text-5xl"></i>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <a href="https://skyfallengineering.govindaparajuli.com.np/" target="_blank"
+                            class="px-6 py-2 bg-accent text-primary font-bold rounded-full transform translate-y-4 group-hover:translate-y-0 transition duration-300">View
+                            Live</a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">SkyFall Engineering</h3>
+                    <p class="text-textGray text-sm mb-4 line-clamp-3">
+                        Corporate portfolio for an engineering firm highlighting projects, services, and team
+                        structure.
+                    </p>
+                    <div class="flex gap-2">
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Corporate</span>
+                        <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300">Engineering</span>
+                    </div>
+                </div>
+            </article>
+
+
+        </div>
+
+    </div>
+</section>
