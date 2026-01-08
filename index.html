@@ -1,305 +1,656 @@
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Govinda Parajuli | Full Stack Web Developer & UI/UX Designer</title>
+    <meta name="title" content="Govinda Parajuli | Full Stack Web Developer & UI/UX Designer">
+    <meta name="description"
+        content="Portfolio of Govinda Parajuli, a Full Stack Web Developer specializing in PHP, Laravel, and modern web solutions. Based in Nepal, delivering high-quality digital experiences.">
+    <meta name="keywords"
+        content="Govinda Parajuli, Web Developer Nepal, Full Stack Developer, Laravel Expert, PHP Developer, UI/UX Designer, Portfolio">
+    <meta name="author" content="Govinda Parajuli">
+    <link rel="canonical" href="https://govindaparajuli.com.np/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://govindaparajuli.com.np/">
+    <meta property="og:title" content="Govinda Parajuli | Full Stack Web Developer">
+    <meta property="og:description"
+        content="Turning ideas into scalable digital solutions. Explore my latest projects and web development services.">
+    <meta property="og:image" content="https://govindaparajuli.com.np/images/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://govindaparajuli.com.np/">
+    <meta property="twitter:title" content="Govinda Parajuli | Full Stack Web Developer">
+    <meta property="twitter:description"
+        content="Passionate about building seamless web experiences and high-quality digital solutions.">
+    <meta property="twitter:image" content="https://govindaparajuli.com.np/images/og-image.jpg">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="js/wow.min.js"></script>
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', /* Slate 900 */
+                        secondary: '#1e293b', /* Slate 800 */
+                        accent: '#D3AC2B', /* Gold */
+                        textGray: '#94a3b8',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --animate-duration: 1200ms;
-            --animate-delay: 1.9s;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
 
-        body p {
-            font-family: 'Tangerine', serif;
-            text-shadow: 4px 4px 4px #aaa;
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D3AC2B;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 
-<body class="box-border font-[Poppins]   ">
-    <section class="bg-gradient-to-br from-cyan-300 to-gray-400 lg:h-screen ">
-        <div>
-            <!-- navbar place here  -->
-            <div
-                class="lg:flex lg:justify-between items-center lg:px-10 md:grid md:grid-cols-2 lg:p-5 bg-[#333D51] text-white">
+<body class="bg-primary text-slate-200 font-body antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex justify-between items-center p-4 lg:p-0">
-                    <h1 class="text-3xl">Govinda Parajuli</h1>
-                    <!-- Hamburger Icon for Mobile -->
-                    <button id="menu-toggle" class="lg:hidden focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold font-sans text-white tracking-wide">
+                        Govinda<span class="text-accent">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#about"
+                        class="text-sm uppercase tracking-wider font-semibold hover:text-accent transition duration-300">About</a>
+                    <a href="#services"
+                        class="text-sm uppercase tracking-wider font-semibold hover:text-accent transition duration-300">Services</a>
+                    <a href="#projects"
+                        class="text-sm uppercase tracking-wider font-semibold hover:text-accent transition duration-300">Projects</a>
+                    <a href="#contact"
+                        class="px-5 py-2 rounded-full border border-accent text-accent hover:bg-accent hover:text-primary transition duration-300 font-semibold text-sm uppercase">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-toggle" aria-label="Open Menu"
+                        class="text-white hover:text-accent focus:outline-none">
+                        <i class="ri-menu-3-line text-3xl"></i>
                     </button>
-                </div>
 
-                <!-- Navigation Links -->
-                <div id="menu" class="hidden lg:flex lg:items-center">
-                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">About Us</a>
-                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Projects</a>
-                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Contact</a>
-                    <a href="" class="block lg:text-xl lg:m-4 uppercase hover:bg-slate-400 px-2 py-2">Educations</a>
                 </div>
             </div>
-            <!-- navbar place here -->
-        </div>
 
-        <script>
-            // Toggle mobile menu
-            document.getElementById('menu-toggle').addEventListener('click', function () {
-                var menu = document.getElementById('menu');
-                menu.classList.toggle('hidden');
-            });
-        </script>
 
-        <style>
-            /* Optional: Add some smooth transitions */
-            #menu {
-                transition: all 0.3s ease-in-out;
-            }
-        </style>
-        <!-- start of landing section -->
 
-        <div class="lg:flex lg:justify-between items-center md:grid md:grid-cols-2 grid-cols-1  lg:p-10 p-5 ">
-            <div class="lg:p-10">
-                <p class="wow animate__animated animate__backInLeft capitalize lg:text-5xl text-3xl text-left px-5 ">hi
-                    there,<br><span>It's me
-                        Govinda</span> <span>parajuli</span>
-                    <br>
-                    <span id="element"></span>
-                </p>
-                <div class="w-full mx-auto  px-5">
-                    <p
-                        class="wow animate__animated animate__backInDown capitalize text-2xl font-bold text-white bg-[#D3AC2B] rounded-md shadow-xl  shadow-white text-center my-5">
-                        Reach me</p>
-                </div>
-                <div class="text-center flex justify-between px-6 text-white">
-                    <a href="https://www.facebook.com/PARAJULIGOVINDA541/"><i
-                            class="wow animate__animated animate__backInUp ri-facebook-circle-fill border-2 rounded-full text-4xl  text-center "></i></a>
-                    <a href="https://www.instagram.com/parajuligovinda057/"><i
-                            class="wow animate__animated animate__backInUp ri-instagram-fill border-2 rounded-full text-4xl"></i></a>
-                    <a href="https://github.com/ParajuliGovinda541"><i
-                            class=" wow animate__animated animate__backInUp ri-github-fill border-2 rounded-full text-4xl"></i></a>
-                    <a href="https://x.com/govinda541"><i
-                            class=" wow animate__animated animate__backInUp ri-twitter-fill border-2 rounded-full text-4xl"></i></a>
-                    <a href="+977 9865255027"><i
-                            class=" wow animate__animated animate__backInUp ri-whatsapp-fill border-2 rounded-full text-4xl"></i></a>
-                    <a href=""><i
-                            class="wow animate__animated animate__backInUp ri-mail-fill border-2 rounded-full text-4xl"></i></a>
-                </div>
-            </div>
-            <div class="wow animate__animated animate__backInRight px-12">
-                <img src="images/Govinda Parajuli (2).jpg" class="rounded-full mx-auto w-96 lg:p-0 p-10 " alt="">
-            </div>
 
         </div>
 
-        <!-- end of landing section -->
-    </section>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-secondary absolute w-full border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:text-accent">About</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium hover:text-accent">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium hover:text-accent">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-accent">Contact Me</a>
 
-    <!-- Start of services -->
-    <section class="bg-gradient-to-bl from-gray-400 to-cyan-300 md:h-fit lg:h-screen lg:pb-0 pb-4">
-        <div>
-            <div>
-                <h1
-                    class="text-center text-3xl font-bold text-white mb-10 px-4 bg-green-400 w-fit mx-auto rounded-lg py-2">
-                    My Services
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-20 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Text Content -->
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <p class="text-accent font-semibold tracking-wide mb-2">HELLO, WORLD</p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold font-sans text-white leading-tight mb-4">
+                    I'm Govinda <br> <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">Parajuli</span>
                 </h1>
-            </div>
-            <div
-                class="lg:grid gap-10 text-center items-center px-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 wow animate__animated animate__fadeInDown">
-                <div
-                    class="bg-[#F4F3EA] md:w-96 hover:bg-[#cdcbb8] hover:cursor-pointer rounded-3xl shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105">
-                    <h1 class="my-5 text-xl text-black font-bold">Website Development</h1>
-                    <p class="text-justify px-6 pb-5">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid blanditiis ullam incidunt quas
-                        veritatis vitae similique, optio, praesentium cumque voluptatibus ea necessitatibus unde at
-                        officiis. Obcaecati voluptatum ratione voluptate dolorum?
-                    </p>
+                <div class="text-2xl md:text-3xl text-gray-400 font-light h-12 mb-6">
+                    I am a <span id="typed-element" class="text-white font-normal"></span>
                 </div>
-                <div
-                    class="bg-[#F4F3EA] md:w-96 hover:bg-[#cdcbb8] hover:cursor-pointer rounded-3xl shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 lg:mt-48 my-10">
-                    <h1 class="my-5 text-xl text-black font-bold">Software Development</h1>
-                    <p class="text-justify px-6 pb-5">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid blanditiis ullam incidunt quas
-                        veritatis vitae similique, optio, praesentium cumque voluptatibus ea necessitatibus unde at
-                        officiis. Obcaecati voluptatum ratione voluptate dolorum?
-                    </p>
-                </div>
-                <div
-                    class="bg-[#F4F3EA] md:w-96 hover:bg-[#cdcbb8] hover:cursor-pointer rounded-3xl shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 lg:-mt-24">
-                    <h1 class="my-5 text-xl text-black font-bold">Graphic Design</h1>
-                    <p class="text-justify px-6 pb-5">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid blanditiis ullam incidunt quas
-                        veritatis vitae similique, optio, praesentium cumque voluptatibus ea necessitatibus unde at
-                        officiis. Obcaecati voluptatum ratione voluptate dolorum?
-                    </p>
-                </div>
-            </div>
-            <!-- </div> -->
 
+                <p class="text-textGray max-w-lg mb-8 text-lg leading-relaxed">
+                    Passionate about building seamless web experiences. I transform ideas into high-quality, scalable
+                    digital solutions.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3 bg-accent text-primary font-bold rounded hover:bg-yellow-500 transition shadow-[0_0_20px_rgba(211,172,43,0.4)]">
+                        Hire Me
+                    </a>
+                    <div class="flex items-center gap-4 px-4">
+                        <a href="https://github.com/ParajuliGovinda541" target="_blank" aria-label="Github"
+                            class="text-2xl hover:text-accent transition hover:-translate-y-1"><i
+                                class="ri-github-fill"></i></a>
+                        <a href="https://www.facebook.com/PARAJULIGOVINDA541/" target="_blank" aria-label="Facebook"
+                            class="text-2xl hover:text-accent transition hover:-translate-y-1"><i
+                                class="ri-facebook-circle-fill"></i></a>
+                        <a href="https://www.instagram.com/parajuligovinda057/" target="_blank" aria-label="Instagram"
+                            class="text-2xl hover:text-accent transition hover:-translate-y-1"><i
+                                class="ri-instagram-fill"></i></a>
+                        <a href="https://x.com/govinda541" target="_blank" aria-label="Twitter"
+                            class="text-2xl hover:text-accent transition hover:-translate-y-1"><i
+                                class="ri-twitter-x-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <div class="absolute inset-0 border-2 border-accent rounded-full translate-x-4 translate-y-4"></div>
+                    <!-- Using a placeholder image for demo, ensure local path is correct -->
+                    <img src="images/Govinda Parajuli (2).jpg"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Govinda+Parajuli&background=D3AC2B&color=0f172a&size=400'"
+                        class="absolute inset-0 w-full h-full object-cover rounded-full shadow-2xl grayscale hover:grayscale-0 transition duration-500"
+                        alt="Govinda Parajuli">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-24 bg-secondary/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent uppercase tracking-widest text-sm font-bold">What I Do</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 font-sans">My Services</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="group bg-primary p-8 rounded-2xl hover:bg-slate-800 transition duration-300 border border-gray-800 hover:border-accent/30"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-3xl mb-6 group-hover:bg-accent group-hover:text-primary transition">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Full-Stack Development</h3>
+                    <p class="text-textGray leading-relaxed">
+                        Building end-to-end web applications using <strong>Laravel</strong> and <strong>Tailwind
+                            CSS</strong>.
+                        I focus on creating seamless user experiences integrated with powerful server-side logic.
+                    </p>
+                </div>
+
+                <div class="group bg-primary p-8 rounded-2xl hover:bg-slate-800 transition duration-300 border border-gray-800 hover:border-accent/30"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-3xl mb-6 group-hover:bg-accent group-hover:text-primary transition">
+                        <i class="ri-database-2-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Backend Engineering</h3>
+                    <p class="text-textGray leading-relaxed">
+                        Specializing in <strong>PHP & MySQL</strong> to build robust server-side systems.
+                        I architect secure databases and clean code structures that ensure your application scales
+                        effortlessly.
+                    </p>
+                </div>
+
+                <div class="group bg-primary p-8 rounded-2xl hover:bg-slate-800 transition duration-300 border border-gray-800 hover:border-accent/30"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-3xl mb-6 group-hover:bg-accent group-hover:text-primary transition">
+                        <i class="ri-shield-flash-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">API Development</h3>
+                    <p class="text-textGray leading-relaxed">
+                        Designing and documenting <strong>RESTful APIs</strong> for mobile and web apps.
+                        I ensure high-speed data delivery and secure authentication using industry standards and
+                        <strong>Postman</strong>.
+                    </p>
+                </div>
+
+            </div>
         </div>
     </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-primary relative">
+        <div class="max-w-7xl mx-auto px-6">
 
-    <!-- end of services -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent uppercase tracking-widest text-sm font-bold">Portfolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 font-sans">Featured Work</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded"></div>
+            </div>
 
+            <div class="mb-20">
+                <h3 class="text-xl font-semibold text-accent mb-8 flex items-center gap-2">
+                    <i class="ri-server-line"></i> Backend Engineering (Laravel & PHP)
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    <!-- Start of projects -->
+                    <article
+                        class="bg-secondary rounded-xl overflow-hidden border border-gray-800 group hover:border-accent/50 transition-all"
+                        data-aos="fade-up">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-2xl">
+                                    <i class="ri-smartphone-line"></i>
+                                </div>
+                                <a href="https://play.google.com/store/apps/details?id=com.jft.app" target="_blank"
+                                    class="text-textGray hover:text-accent transition"><i
+                                        class="ri-external-link-line text-xl"></i></a>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">JFT - Journey For Truth</h4>
+                            <p class="text-textGray text-sm mb-4">Developed scalable RESTful APIs using Laravel. Managed
+                                complex MySQL schemas and performed rigorous API testing with Postman to support mobile
+                                clients.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Laravel</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">MySQL</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Rest
+                                    API</span>
+                            </div>
+                        </div>
+                    </article>
 
-    <section class="  bg-gradient-to-b from-[#a9afb9] to-cyan-600 md:h-fit lg:h-screen lg:pd-0 pb-4">
+                    <article
+                        class="bg-secondary rounded-xl overflow-hidden border border-gray-800 group hover:border-accent/50 transition-all"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-2xl">
+                                    <i class="ri-global-line"></i>
+                                </div>
+                                <a href="https://neowns.com/" target="_blank"
+                                    class="text-textGray hover:text-accent transition"><i
+                                        class="ri-external-link-line text-xl"></i></a>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Neowns</h4>
+                            <p class="text-textGray text-sm mb-4">Engineered server-side logic and database architecture
+                                using PHP/Laravel. Focused on data integrity and high-performance API delivery.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">PHP</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Laravel</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Postman</span>
+                            </div>
+                        </div>
+                    </article>
 
-        <div class="flex justify-center">
+                    <article
+                        class="bg-secondary rounded-xl overflow-hidden border border-gray-800 group hover:border-accent/50 transition-all"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div
+                                    class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent text-2xl">
+                                    <i class="ri-shield-keyhole-line"></i>
+                                </div>
+                                <a href="https://pointpressure.com/" target="_blank"
+                                    class="text-textGray hover:text-accent transition"><i
+                                        class="ri-external-link-line text-xl"></i></a>
+                            </div>
+                            <h4 class="text-lg font-bold text-white mb-2">Point Pressure</h4>
+                            <p class="text-textGray text-sm mb-4">Built robust backend services with Laravel. Optimized
+                                MySQL queries and designed clean RESTful endpoints for secure data exchange.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Laravel</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">MySQL</span>
+                                <span
+                                    class="text-[10px] uppercase px-2 py-0.5 bg-primary text-accent border border-accent/30 rounded font-bold">Rest
+                                    API</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
             <div>
-                <!-- <img src="images/cord-160436_1280.webp" class="h-32 w-48  mx-auto wow animate__animated animate__fadeOutUp"
-                    alt=""> -->
-                <h1
-                    class=" bg-[#D3AC2B] px-20 py-3 text-xl mt-5 text-gray-50 font-bold wow animate__animated animate__fadeInUp rounded-md">
-                    Projects</h1>
-            </div>
+                <h3 class="text-xl font-semibold text-accent mb-8 flex items-center gap-2">
+                    <i class="ri-layout-masonry-line"></i> Full-Stack Solutions
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        </div>
+                    <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                        data-aos="fade-up">
+                        <div class="relative h-48 bg-slate-700 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center text-gray-500"><i
+                                    class="ri-bar-chart-box-line text-5xl"></i></div>
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <a href="https://sharkfundamentals.com/" target="_blank"
+                                    class="px-6 py-2 bg-accent text-primary font-bold rounded-full transition duration-300">View
+                                    Live</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-white mb-2">Shark Fundamentals</h4>
+                            <p class="text-textGray text-sm mb-4">Complete full-stack platform built with Laravel and
+                                Tailwind CSS. Features dynamic data rendering and responsive UI.</p>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">Tailwind</span>
+                                <span
+                                    class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">Laravel</span>
+                            </div>
+                        </div>
+                    </article>
 
-        <div class="w-full lg:flex md:grid md:grid-cols-2 gap-10 grid-cols-1 lg:justify-center mx-auto my-10 lg:px-10">
+                    <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative h-48 bg-slate-700 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center text-gray-500"><i
+                                    class="ri-hotel-bed-line text-5xl"></i></div>
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <a href="https://gaurabhotel.govindaparajuli.com.np/" target="_blank"
+                                    class="px-6 py-2 bg-accent text-primary font-bold rounded-full transition duration-300">View
+                                    Live</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-white mb-2">Gaurab Hotel</h4>
+                            <p class="text-textGray text-sm mb-4">End-to-end hospitality system. Integrated Laravel
+                                booking logic with a modern Tailwind-powered frontend.</p>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">PHP/Laravel</span>
+                                <span
+                                    class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">Tailwind</span>
+                            </div>
+                        </div>
+                    </article>
 
-            <!-- First Project -->
-            <div
-                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-                <iframe class="rounded-t-md" src="https://sharkfundamentals.com/" width="100%" height="50%"
-                    style="border: none; overflow: hidden;">
-                </iframe>
-                <div class="px-6 py-4">
-                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Shark Fundamentals</p>
-                    <p class="text-gray-600 text-justify text-base">
-                        This project showcases an educational website focused on stock market fundamentals and trading
-                        insights.
-                        Developed using responsive design principles to ensure a seamless user experience across
-                        devices.
-                    </p>
-                </div>
-                <a href="https://gaurabhotel.govindaparajuli.com.np/"
-                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                    target="_blank">Visit Site</a>
-            </div>
-
-            <div
-                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-                <iframe class="rounded-t-md" src="https://gaurabhotel.govindaparajuli.com.np/" width="100%" height="50%"
-                    style="border: none; overflow: hidden;">
-                </iframe>
-                <div class="px-6 py-4">
-                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">Gaurab Hotel And Lodge
-                    </p>
-                    <p class="text-gray-600 text-justify text-base">
-                        This project showcases an educational website focused on stock market fundamentals and trading
-                        insights.
-                        Developed using responsive design principles to ensure a seamless user experience across
-                        devices.
-                    </p>
-                </div>
-                <a href="https://skyfallengineering.govindaparajuli.com.np/"
-                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                    target="_blank">Visit Site</a>
-            </div>
-
-            <div
-                class="bg-white mx-auto rounded-md w-104 h-[30rem] text-center my-10 wow animate__animated animate__slideInUp">
-                <iframe class="rounded-t-md" src="https://skyfallengineering.govindaparajuli.com.np/" width="100%"
-                    height="50%" style="border: none; overflow: hidden;">
-                </iframe>
-                <div class="px-6 py-4">
-                    <p class="text-center my-2 bg-[#333D51] text-white rounded-md py-2 text-lg">SkyFall Engineering</p>
-                    <p class="text-gray-600 text-justify text-base">
-                        This project showcases an educational website focused on stock market fundamentals and trading
-                        insights.
-                        Developed using responsive design principles to ensure a seamless user experience across
-                        devices.
-                    </p>
-                </div>
-                <a href="https://sharkfundamentals.com/"
-                    class="px-5 py-3 bg-red-500 rounded-md text-white hover:bg-red-600 duration-100 text-base"
-                    target="_blank">Visit Site</a>
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-    <!-- emd of projects -->
-
-
-    <!-- Start of footer -->
-
-    <section class="wow animate__animated animate__slideInUp">
-        <footer style="background-image: url('images/1e49b9b1-5933-4d93-93bb-be15f17eebac.jpeg');"
-            class=" object-cover h-96   bg-center ">
-        </footer>
-        <div class="bg-[#131F22] px-10 py-9 flex justify-center items-center wow animate__animated animate__slideInUp">
-            <div class="text-white text-center wow animate__animated animate__slideInUp">
-                <h1 class="text-[#FFFFFF] font-bold text-5xl">Get In Touch</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque nostrum ad, non quos vitae dolorum
-                    asperiores neque nemo rerum. Ipsam omnis assumenda sapiente nobis quod! Molestiae deserunt ratione
-                    odio architecto?</p>
-                <div class="text-center ">
-                    <i
-                        class="wow animate__animated animate__backInUp ri-facebook-circle-fill border-2 rounded-full text-4xl  text-center "></i>
-                    <i
-                        class="wow animate__animated animate__backInUp ri-instagram-fill border-2 rounded-full text-4xl"></i>
-                    <i
-                        class=" wow animate__animated animate__backInUp ri-github-fill border-2 rounded-full text-4xl"></i>
-                    <i
-                        class=" wow animate__animated animate__backInUp ri-twitter-fill border-2 rounded-full text-4xl"></i>
-                    <i
-                        class=" wow animate__animated animate__backInUp ri-whatsapp-fill border-2 rounded-full text-4xl"></i>
-                    <i
-                        class="wow animate__animated animate__backInUp ri-telegram-fill border-2 rounded-full text-4xl"></i>
-                </div>
-                <div class="my-10">
-                    Desgin and developed by Govindaa
+                    <article class="bg-secondary rounded-xl overflow-hidden shadow-lg border border-gray-800 group"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-48 bg-slate-700 overflow-hidden">
+                            <div class="absolute inset-0 flex items-center justify-center text-gray-500"><i
+                                    class="ri-building-2-line text-5xl"></i></div>
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <a href="https://skyfallengineering.govindaparajuli.com.np/" target="_blank"
+                                    class="px-6 py-2 bg-accent text-primary font-bold rounded-full transition duration-300">View
+                                    Live</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-white mb-2">SkyFall Engineering</h4>
+                            <p class="text-textGray text-sm mb-4">Corporate engineering portal built using the Laravel
+                                framework and Tailwind CSS for a sleek, professional interface.</p>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">Laravel</span>
+                                <span class="text-xs px-2 py-1 bg-slate-700 rounded text-gray-300 font-bold">Full
+                                    Stack</span>
+                            </div>
+                        </div>
+                    </article>
 
                 </div>
             </div>
 
         </div>
     </section>
-    <!-- End of Footer -->
 
+    <section id="experience" class="py-24 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent uppercase tracking-widest text-sm font-bold">Resume</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 font-sans">Work Experience</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded"></div>
+            </div>
 
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <div class="relative pl-8 border-l-2 border-accent/30 py-4" data-aos="fade-up">
+                    <div class="absolute -left-[9px] top-6 w-4 h-4 bg-accent rounded-full border-4 border-primary">
+                    </div>
+                    <div class="bg-primary p-6 rounded-2xl border border-gray-800 hover:border-accent/30 transition">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Junior Laravel Developer</h3>
+                            <span class="text-accent font-semibold">2024 – Nov 2025</span>
+                        </div>
+                        <p class="text-white/80 font-medium mb-4 italic">MarginTopSolution Pvt. Ltd – Lalitpur (Remote)
+                        </p>
+                        <ul class="text-textGray space-y-2 text-sm">
+                            <li class="flex gap-2"><i class="ri-arrow-right-s-line text-accent"></i> Developed and
+                                maintained high-performance backend APIs using Laravel.</li>
+                            <li class="flex gap-2"><i class="ri-arrow-right-s-line text-accent"></i> Collaborated with
+                                frontend teams to deliver seamless user experiences.</li>
+                            <li class="flex gap-2"><i class="ri-arrow-right-s-line text-accent"></i> Integrated
+                                third-party APIs and customized secure authentication systems.</li>
+                        </ul>
+                    </div>
+                </div>
 
+                <div class="relative pl-8 border-l-2 border-accent/30 py-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -left-[9px] top-6 w-4 h-4 bg-accent rounded-full border-4 border-primary">
+                    </div>
+                    <div class="bg-primary p-6 rounded-2xl border border-gray-800 hover:border-accent/30 transition">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Full Stack Web Development Intern</h3>
+                            <span class="text-accent font-semibold">Dec 2023 – Mar 2024</span>
+                        </div>
+                        <p class="text-white/80 font-medium mb-4 italic">Bitmap I.T. Solution – Chitwan</p>
+                        <ul class="text-textGray space-y-2 text-sm">
+                            <li class="flex gap-2"><i class="ri-arrow-right-s-line text-accent"></i> Assisted in
+                                full-stack projects, handling both backend and frontend tasks.</li>
+                            <li class="flex gap-2"><i class="ri-arrow-right-s-line text-accent"></i> Enhanced research
+                                skills and problem-solving in real-world environments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="py-20 bg-primary overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-secondary rounded-3xl p-8 md:p-12 border border-gray-800 relative overflow-hidden group">
+                <i
+                    class="ri-compass-3-line absolute -right-10 -bottom-10 text-[12rem] text-white/[0.03] group-hover:text-accent/[0.05] transition-colors duration-700"></i>
 
+                <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                    <div
+                        class="w-24 h-24 md:w-32 md:h-32 bg-accent/10 rounded-2xl flex items-center justify-center text-accent text-5xl shrink-0 border border-accent/20 rotate-3 group-hover:rotate-0 transition-transform">
+                        <i class="ri-compass-3-line"></i>
+                    </div>
+                    <div>
+                        <span class="text-accent font-bold tracking-widest uppercase text-sm">Extracurricular
+                            Activity</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mt-2 mb-4 font-sans">Scout Member & Leader
+                        </h3>
+                        Scout Member & Leader</h2>
+                        <p class="text-textGray text-lg leading-relaxed max-w-2xl mb-8">
+                            As an active member of the <strong>Scouting movement</strong>, I apply core values of
+                            discipline,
+                            resourcefulness, and teamwork to my engineering workflow. This background has shaped my
+                            ability to
+                            lead teams and solve complex problems under pressure.
+                        </p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                            <div
+                                class="flex items-center gap-2 text-white/90 bg-primary/50 px-4 py-2 rounded-lg border border-gray-700">
+                                <i class="ri-checkbox-circle-fill text-accent"></i>
+                                <span class="text-sm font-semibold uppercase tracking-tight">Team Leadership</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 text-white/90 bg-primary/50 px-4 py-2 rounded-lg border border-gray-700">
+                                <i class="ri-checkbox-circle-fill text-accent"></i>
+                                <span class="text-sm font-semibold uppercase tracking-tight">Public Service</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 text-white/90 bg-primary/50 px-4 py-2 rounded-lg border border-gray-700">
+                                <i class="ri-checkbox-circle-fill text-accent"></i>
+                                <span class="text-sm font-semibold uppercase tracking-tight">Discipline</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 
+    <section id="contact" class="py-24 bg-primary relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent uppercase tracking-widest text-sm font-bold">Get In Touch</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 font-sans">Contact Me</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mt-4 rounded"></div>
+            </div>
 
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-white mb-6">Let's discuss your next project</h3>
+                    <p class="text-textGray text-lg">
+                        I am currently available for freelance work or full-time opportunities.
+                        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                    </p>
 
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent text-xl group-hover:bg-accent group-hover:text-primary transition">
+                                <i class="ri-mail-send-line"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-textGray uppercase font-bold tracking-widest">Email Me</p>
+                                <a href="mailto:parajuligovinda541@gmail.com"
+                                    class="text-white font-semibold hover:text-accent">parajuligovinda541@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent text-xl group-hover:bg-accent group-hover:text-primary transition">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-textGray uppercase font-bold tracking-widest">Call Me</p>
+                                <a href="tel:+9779865255027" class="text-white font-semibold hover:text-accent">+977
+                                    9865255027</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <div
+                                class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-accent text-xl group-hover:bg-accent group-hover:text-primary transition">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-textGray uppercase font-bold tracking-widest">Location</p>
+                                <p class="text-white font-semibold">Chitwan, Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <form action="#" class="bg-secondary p-8 rounded-3xl border border-gray-800 space-y-4"
+                    data-aos="fade-left">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Your Name"
+                            class="w-full bg-primary border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white">
+                        <input type="email" placeholder="Your Email"
+                            class="w-full bg-primary border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white">
+                    </div>
+                    <input type="text" placeholder="Subject"
+                        class="w-full bg-primary border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white">
+                    <textarea placeholder="Your Message" rows="5"
+                        class="w-full bg-primary border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent text-white"></textarea>
+                    <button type="submit"
+                        class="w-full py-4 bg-accent text-primary font-bold rounded-xl hover:bg-yellow-500 transition uppercase tracking-widest">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
+    <footer class="py-12 bg-secondary/80 border-t border-gray-800 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-white mb-6">Govinda Parajuli<span class="text-accent"></span></h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://github.com/ParajuliGovinda541"
+                    class="text-2xl text-textGray hover:text-white transition"><i class="ri-github-line"></i></a>
+                <a href="#" class="text-2xl text-textGray hover:text-white transition"><i
+                        class="ri-linkedin-box-line"></i></a>
+                <a href="https://x.com/govinda541" class="text-2xl text-textGray hover:text-white transition"><i
+                        class="ri-twitter-x-line"></i></a>
+            </div>
+            <p class="text-textGray text-sm">
+                &copy; 2026 Govinda Parajuli. All rights reserved. <br>
+                <span class="text-xs opacity-50 italic">Built with Laravel mindset & Tailwind CSS</span>
+            </p>
+        </div>
+    </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-
-
-
-
-    <!-- Setup and start animation! -->
     <script>
-        var typed = new Typed('#element', {
-            strings: ['<i>Web</i> Developer.', ' freelancer.', ' laravel developer.'],
-            typeSpeed: 50,
+        // Initialize Animations
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    </script>
 
-    <script>
-        new WOW().init();
+        // Typing Effect
+        new Typed('#typed-element', {
+            strings: ['Laravel Developer.', 'Backend Engineer.', 'Full Stack Enthusiast.', 'Scout Leader.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+            } else {
+                nav.classList.remove('py-2');
+            }
+        });
     </script>
 </body>
 
